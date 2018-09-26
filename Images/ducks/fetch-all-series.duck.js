@@ -2,9 +2,9 @@ import _ from 'lodash/fp';
 import { ajax } from 'rxjs/observable/dom/ajax';
 import { createAction } from 'redux-actions';
 
-import { usersUrls } from '../../../../config/server-urls.constants'
+import { usersUrls } from '../../../../../config/server-urls.constants'
 import { fetchSeriesDetailRequest } from '../../Images/ducks/fetch-series-detail.duck';
-import { hasTokenInResponse } from '../../../../utils/plugin-helpers.utils';
+import { hasTokenInResponse } from '../../../../../utils/plugin-helpers.utils';
 
 export const FETCH_SERIES_REQUEST = 'FETCH_SERIES_REQUEST';
 export const FETCH_SERIES_SUCCESS = 'FETCH_SERIES_SUCCESS';
