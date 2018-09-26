@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import PTButton from '../../../ui-elements/PTButton/PTButton';
-import PluginDetailHeader from '../../../plugin-page-component/PluginDetailHeader';
+import PTButton from '../../../../ui-elements/PTButton/PTButton';
+import PluginDetailHeader from '../../../../plugin-page-component/PluginDetailHeader';
 
 export default class ImagesDetailPanel extends PureComponent {
   static propTypes = {

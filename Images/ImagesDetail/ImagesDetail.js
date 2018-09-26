@@ -6,7 +6,7 @@ import _ from 'lodash/fp';
 import * as cornerstone from 'cornerstone-core';
 import * as cornerstoneTools from 'cornerstone-tools';
 
-import PluginDetailPanel from '../../../plugin-page-component/PluginDetailPanel';
+import PluginDetailPanel from '../../../../plugin-page-component/PluginDetailPanel';
 import ImagesDetailPanel from '../images-page-component/ImagesDetailPanel';
 import CornerstoneImage from '../images-page-component/CornerstoneImage';
 import { valuesNames, valuesLabels } from '../forms.config';

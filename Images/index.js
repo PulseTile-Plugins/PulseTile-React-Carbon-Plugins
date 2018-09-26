@@ -1,7 +1,7 @@
 import { combineEpics } from 'redux-observable';
 
-import asyncComponent from '../../../components/containers/AsyncComponent/AsyncComponent';
-import { clientUrls } from '../../../config/client-urls.constants';
+import asyncComponent from '../../../../components/containers/AsyncComponent/AsyncComponent';
+import { themeClientUrls } from '../../config/clientUrls';
 
 import { fetchPatientImagesEpic } from './ducks/fetch-patient-images.duck';
 import { fetchPatientImagesDetailEpic } from './ducks/fetch-patient-images-detail.duck';
@@ -26,8 +26,8 @@ const reducers = {
 const sidebarConfig = { key: 'images', pathToTransition: '/images', name: 'Images', isVisible: true };
 
 const routers = [
-  { key: 'images', component: Images, path: `${clientUrls.PATIENTS}/:userId/${clientUrls.IMAGES}` },
-  { key: 'imagesDetail', component: Images, path: `${clientUrls.PATIENTS}/:userId/${clientUrls.IMAGES}/:sourceId` },
+  { key: 'images', component: Images, path: `${themeClientUrls.PATIENTS}/:userId/${themeClientUrls.IMAGES}` },
+  { key: 'imagesDetail', component: Images, path: `${themeClientUrls.PATIENTS}/:userId/${themeClientUrls.IMAGES}/:sourceId` },
 ];
 
 export default {

@@ -7,20 +7,20 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { lifecycle, compose } from 'recompose';
 
-import PluginListHeader from '../../plugin-page-component/PluginListHeader';
-import PluginMainPanel from '../../plugin-page-component/PluginMainPanel';
+import PluginListHeader from '../../../plugin-page-component/PluginListHeader';
+import PluginMainPanel from '../../../plugin-page-component/PluginMainPanel';
 import { columnsConfig, defaultColumnsSelected } from './table-columns.config'
 import { valuesNames } from './forms.config';
 import { fetchPatientImagesRequest } from './ducks/fetch-patient-images.duck';
 import { fetchPatientImagesDetailRequest } from './ducks/fetch-patient-images-detail.duck';
 import { fetchSeriesRequest } from './ducks/fetch-all-series.duck';
 import { fetchSeriesDetailRequest } from './ducks/fetch-series-detail.duck';
-import { fetchPatientImagesOnMount, fetchSeriesOnMount } from '../../../utils/HOCs/fetch-patients.utils';
+import { fetchPatientImagesOnMount, fetchSeriesOnMount } from '../../config/synopsisRequests';
 import { patientImagesSelector, seriesDetailAndInstanceIdsSelector, allSeriesSelector } from './selectors';
-import { clientUrls } from '../../../config/client-urls.constants';
+import { themeClientUrls } from '../../config/clientUrls';
 import ImagesDetail from './ImagesDetail/ImagesDetail';
-import { getDDMMMYYYY } from '../../../utils/time-helpers.utils';
-import { operationsOnCollection } from '../../../utils/plugin-helpers.utils';
+import { getDDMMMYYYY } from '../../../../utils/time-helpers.utils';
+import { operationsOnCollection } from '../../../../utils/plugin-helpers.utils';
 
 const IMAGES_MAIN = 'imagesMain';
 const IMAGES_DETAIL = 'imagesDetail';
@@ -66,10 +66,10 @@ export default class Images extends PureComponent {
     const userId = this.context.router.route.match.params.userId;
 
     //TODO should be implemented common function, and the state stored in the store Redux
-    if (this.context.router.history.location.pathname === `${clientUrls.PATIENTS}/${userId}/${clientUrls.IMAGES}/${sourceId}` && sourceId !== undefined) {
+    if (this.context.router.history.location.pathname === `${themeClientUrls.PATIENTS}/${userId}/${themeClientUrls.IMAGES}/${sourceId}` && sourceId !== undefined) {
       this.setState({ isSecondPanel: true, isDetailPanelVisible: true, isBtnExpandVisible: true })
     }
-    if (this.context.router.history.location.pathname === `${clientUrls.PATIENTS}/${userId}/${clientUrls.IMAGES}`) {
+    if (this.context.router.history.location.pathname === `${themeClientUrls.PATIENTS}/${userId}/${themeClientUrls.IMAGES}`) {
       this.setState({ isSecondPanel: false, isBtnExpandVisible: false, openedPanel: IMAGES_PANEL, isDetailPanelVisible: false, expandedPanel: 'all' })
     }
 
@@ -101,7 +101,7 @@ export default class Images extends PureComponent {
     const { actions, userId } = this.props;
     this.setState({ isSecondPanel: true, isDetailPanelVisible: true, isBtnExpandVisible: true, openedPanel: IMAGES_PANEL, editedPanel: {}, expandedPanel: 'all', isLoading: true });
     actions.fetchSeriesRequest({ userId, studyId: sourceId, source: 'orthanc' });
-    this.context.router.history.push(`${clientUrls.PATIENTS}/${userId}/${clientUrls.IMAGES}/${sourceId}`);
+    this.context.router.history.push(`${themeClientUrls.PATIENTS}/${userId}/${themeClientUrls.IMAGES}/${sourceId}`);
   };
 
   handleSetOffset = offset => this.setState({ offset });
