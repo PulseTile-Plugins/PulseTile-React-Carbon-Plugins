@@ -84,6 +84,7 @@ exports[`Component <ImagesDetail /> should renders correctly with different stat
     <PluginDetailPanel
       editedPanel={Object {}}
       isBtnShowPanel={true}
+      isEditButton={true}
       isOpen={false}
       isShowControlPanel={false}
       name="imagesDetailPanel"
@@ -300,6 +301,7 @@ exports[`Component <ImagesDetail /> should renders with props correctly 1`] = `
     <PluginDetailPanel
       editedPanel={Object {}}
       isBtnShowPanel={true}
+      isEditButton={true}
       isOpen={false}
       isShowControlPanel={false}
       name="imagesDetailPanel"
