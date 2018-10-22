@@ -24,8 +24,7 @@ export const fetchSeriesEpic = (action$, store) =>
           const userId = payload.userId;
           const seriesId = response.seriesIds[0];
           const source = 'orthanc';
-          const token = hasTokenInResponse(response);
-
+          const token = true;
           return [
             fetchSeriesSuccess({ userId, allSeries: response, token }),
             fetchSeriesDetailRequest({ userId, seriesId, source }),

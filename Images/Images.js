@@ -28,7 +28,15 @@ const IMAGES_DETAIL = 'imagesDetail';
 const IMAGES_PANEL = 'imagesPanel';
 const IMAGES_DETAIL_PANEL = 'imagesDetailPanel';
 
-const mapDispatchToProps = dispatch => ({ actions: bindActionCreators({ fetchPatientImagesRequest, fetchPatientImagesDetailRequest, fetchSeriesRequest, fetchSeriesDetailRequest }, dispatch) });
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators({
+    fetchPatientImagesRequest,
+    fetchPatientImagesDetailRequest,
+    fetchSeriesRequest,
+    fetchSeriesDetailRequest
+  },
+  dispatch)
+});
 
 @connect(patientImagesSelector, mapDispatchToProps)
 @connect(seriesDetailAndInstanceIdsSelector)
